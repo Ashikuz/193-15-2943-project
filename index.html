@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Website</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="" href="mangement.php" />
+  </head>
+
+  <body>
+    <?php include 'database.php'; ?>
+    <header>
+      <div class="navbar">
+        <h1>BookEasy</h1>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="home" class="hero">
+      <h2>Your Easy Booking Solution</h2>
+      <p>Book appointments and services effortlessly.</p>
+      <a href="#services" class="btn">Get Started</a>
+    </section>
+
+    <section id="services" class="services">
+      <h2>Our Services</h2>
+      <div class="service-card">
+        <h3>Hair Salon</h3>
+        <p>Book professional hairstyling services.</p>
+      </div>
+      <div class="service-card">
+        <h3>Fitness Training</h3>
+        <p>Schedule personal training sessions with experts.</p>
+      </div>
+      <div class="service-card">
+        <h3>Spa Treatments</h3>
+        <p>Relax with our premium spa services.</p>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About Us</h2>
+      <p>
+        We provide an online platform for booking a variety of services at your
+        convenience.
+      </p>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <form action="submit_form.php" method="POST">
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" required /><br /><br />
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required /><br /><br />
+        <label for="message">Message:</label><br />
+        <textarea id="message" name="message" rows="4" required></textarea
+        ><br /><br />
+        <button type="submit">Send</button>
+      </form>
+    </section>
+    <section id="popup" class="popup hidden">
+      <div class="popup-content">
+        <h2>Message Sent!</h2>
+        <p>
+          Thank you, <span id="user-name"></span>! Your message has been
+          successfully sent. We will get back to you shortly.
+        </p>
+        <button id="close-popup" class="btn">Close</button>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 BookEasy. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
